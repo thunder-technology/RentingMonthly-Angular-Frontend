@@ -1,0 +1,93 @@
+$c1: black;
+$c2: #373A39;
+$c3: #7A838C;
+$c4: linear-gradient(to right, #22A3DD, #9CC846);
+$c5: white;
+$c6: #2A2C2B;
+$c7: #F9FCFF;
+$c8: #9B9B9B;
+
+
+h1 {
+  font-family: Montserrat, Semibold, sans-serif;
+  size: 54px;
+  letter-spacing: 15px;
+  line-height: 16px;
+}
+
+h2 {
+  font-family: Montserrat, Semibold, sans-serif;
+  size: 35px;
+  letter-spacing: 7px;
+}
+
+h3 {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  size: 30px;
+  letter-spacing: 2px;
+}
+
+h4 {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  size: 24px;
+  letter-spacing: 2px;
+}
+
+h5 {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  size: 22px;
+  letter-spacing: 2px;
+}
+
+h6 {
+  font-family: Montserrat, sans-serif;
+  font-weight: normal;
+  size: 24px;
+  letter-spacing: 2px;
+}
+
+.p1 {
+  font-family: Montserrat, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  font-size: 0.6em;
+}
+
+.p2 {
+  font-family: Montserrat, sans-serif;
+  font-weight: lighter;
+  size: 18px;
+}
+
+.p3 {
+  font-family: Montserrat, sans-serif;
+  font-weight: lighter;
+  font-size: 0.8em;
+  letter-spacing: 0.2em;
+  line-height: 30px;
+  padding-inline-end: 1em;
+}
+
+.p4 {
+  font-family: Montserrat, sans-serif;
+  font-weight: normal;
+  font-size: 0.8em;
+  letter-spacing: 0.2em;
+  background: $c4;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title_icon {
+  height: 1em;
+  width: 1em;
+}
+
+.fill-space {
+  // This fills the remaining space, by using flexbox.
+  // Every toolbar row uses a flexbox row layout.
+  flex: 1 1 auto;
+}

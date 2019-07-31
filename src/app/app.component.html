@@ -1,0 +1,39 @@
+<mat-toolbar style="background: transparent" class="fill-space">
+    <div fxFlex="row">
+        <div [fxFlex]="50">
+            <mat-card-title>
+                <img src="../assets/img/rm-logo-1.png" alt="rm-logo-1" class="title_icon"/><span class="p1"> ENTING MONTHLY</span>
+            </mat-card-title>
+        </div>
+        <div [fxFlex]="50">
+            <mat-card-actions>
+                <div fxHide.lt-lg="true">
+                    <button mat-flat-button (click)="onClickProduct()"><span class="p3">PRODUCT</span></button>
+                    <button mat-flat-button (click)="onClickOurService()"><span class="p3">OUR SERVICES</span></button>
+                    <button mat-flat-button (click)="onClickRenting()"><span class="p3">RENTING</span></button>
+                    <button mat-flat-button (click)="onClickAboutUs()"><span class="p3">ABOUT US</span></button>
+                    <button mat-flat-button (click)="onClickContactUs()"><span class="p3">CONTACT US</span></button>
+                    <button mat-flat-button (click)="onClickLogin()">
+                        <span class="p4">LOG IN</span>
+                    </button>
+                </div>
+                <div fxHide.gt-md="true">
+                    <button mat-flat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                    <mat-menu #menu>
+                        <button mat-menu-item (click)="onClickProduct()"><span class="p3">PRODUCT</span></button>
+                        <button mat-menu-item (click)="onClickOurService()"><span class="p3">OUR SERVICES</span></button>
+                        <button mat-menu-item (click)="onClickRenting()"><span class="p3">RENTING</span></button>
+                        <button mat-menu-item (click)="onClickAboutUs()"><span class="p3">ABOUT US</span></button>
+                        <button mat-menu-item (click)="onClickContactUs()"><span class="p3">CONTACT US</span></button>
+                        <button mat-menu-item (click)="onClickLogin()">
+                            <span class="p4">LOG IN</span>
+                        </button>
+                    </mat-menu>
+                </div>
+            </mat-card-actions>
+        </div>
+    </div>
+</mat-toolbar>
+<router-outlet></router-outlet>
