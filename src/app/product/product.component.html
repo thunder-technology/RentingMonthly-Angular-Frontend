@@ -1,1 +1,110 @@
-<p>product works!</p>
+<div fxLayout="column">
+    <carousel>
+        <slide *ngFor="let samplePath of samplePathArr; let index=index">
+            <img [src]=samplePath [alt]="index" class="wrapper">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Photo {{index+1}}</h3>
+            </div>
+        </slide>
+    </carousel>
+</div>
+<div fxLayout="row">
+    <!------------------------------------------- CONTENT ------------------------------------------------------------->
+    <div class="content">
+        <h2>{{address}}</h2>
+        <p class="city">{{city}}</p>
+        <p class="sub_title">{{roomType}}</p>
+        <hr />
+        <!------------------------------------------- DETAIL ----------------------------------------------------------->
+        <p class="sub_title">DETAIL</p>
+        <p class="text">
+            Peccata autem partim esse tolerabilia, partim nullo modo, propterea quod alia peccata plures, alia pauciores quasi
+            numeros officii praeterirent. Deinde non quaerimus, quid obscuretur aut intereat, quia sit admodum parvum, sed quid
+            tale sit, ut expleat summam. Quid ad utilitatem tantae pecuniae? Nam nec vir bonus ac iustus haberi debet qui, ne
+            malum habeat, abstinet se ab iniuria. Quae sequuntur igitur?
+            <br />
+            <br />
+            Tum ille timide vel potius verecunde: Facio, inquit. Sed haec ab Antiocho, familiari nostro, dicuntur multo melius et
+            fortius, quam a Stasea dicebantur. An eiusdem modi? Primum cur ista res digna odio est, nisi quod est turpis? Hoc etsi
+            multimodis reprehendi potest, tamen accipio, quod dant. Vos autem cum perspicuis dubia debeatis illustrare, dubiis
+            perspicua conamini tollere. Ex eorum enim scriptis et institutis cum omnis doctrina liberalis, omnis historia.
+        </p>
+        <div fxLayout="row wrap" fxLayoutGap="4em">
+            <div *ngFor="let icon of iconList; index as i">
+                <fa-icon class="icon" [icon]="icon.icon" size="2x"></fa-icon>
+                <span class="icon_text">{{icon.num}}</span>
+            </div>
+        </div>
+        <hr />
+        <!------------------------------------------- RULES ----------------------------------------------------------->
+        <p class="sub_title">RULES</p>
+        <p class="text">
+            * Ex quo illud efficitur, qui bene cenent omnis libenter cenare, qui libenter, non continuo bene. Ecce aliud simile dissimile. <br />
+            * Equidem e Cn. <br />
+            * Equidem e Cn. <br />
+            * Quam nemo umquam voluptatem appellavit, appellat; <br />
+            * Ea possunt paria non esse. <br />
+            * Nunc vero a primo quidem mirabiliter occulta natura est nec perspici nec cognosci potest.
+        </p>
+        <hr />
+        <!------------------------------------------- AMENITIES ------------------------------------------------------->
+        <p class="sub_title">AMENITIES</p>
+        <div>
+            <div fxLayout="row wrap" fxFlex="1 1 auto" fxLayoutGap="4em">
+                <div *ngFor="let icon of amenityIconList">
+                    <div *ngIf="icon.num===1">
+                        <fa-icon class="icon" [icon]="icon.icon" size="2x"></fa-icon>
+                        <span class="icon_text">{{icon.text}}</span>
+                    </div>
+                    <div *ngIf="icon.num===0">
+                        <fa-icon class="icon_gray" [icon]="icon.icon" size="2x"></fa-icon>
+                        <span class="icon_text">{{icon.text}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <!------------------------------------------- REVIEWS --------------------------------------------------------->
+        <p class="sub_title">REVIEWS</p>
+        <div *ngFor="let index of [1,2,3]">
+            <i *ngFor="let i of counter(star)" class="material-icons star">star_rate</i>
+            <p class="review_title">Bonus buy all the way around!</p>
+            <p class="text">I love the way this night cream makes my face feel. I clean my face good and them apply before bed. I apply this
+                on my face and my neck. This cream dissolves fast into your face and leaves no greasy feeling. This cream makes
+                my face feel so soft and moisturized.</p>
+            <p class="text" style="color: lightgray">
+                Written By: <span style="color: #22A3DD;">Mike Jason</span>  |  Aug 10, 2017  |  <span style="color: #22A3DD;">120</span> of 150 People found this useful
+            </p>
+        </div>
+        <hr />
+        <!------------------------------------------- LOCATION ------------------------------------------------------------>
+        <p class="sub_title">LOCATION</p>
+        <div style="margin-top: 3em; margin-left: 1em">
+            <img src="../../assets/img/map-example.jpg" alt="map-example">
+        </div>
+    </div>
+    <!------------------------------------------- CALENDAR ------------------------------------------------------------>
+    <div class="calendar">
+        <mat-card>
+            <mat-card-content>
+                <span class="price">${{price}}CAD </span> per month <br />
+                <i *ngFor="let i of counter(star)" class="material-icons star">star_rate</i>
+                <hr />
+            </mat-card-content>
+            <mat-form-field style="margin-right: 1em">
+                <input matInput [matDatepickerFilter]="filter" [matDatepicker]="checkin" placeholder="CHECK IN">
+                <mat-datepicker-toggle matSuffix [for]="checkin"></mat-datepicker-toggle>
+                <mat-datepicker #checkin></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [matDatepickerFilter]="filter" [matDatepicker]="checkout" placeholder="CHECK OUT">
+                <mat-datepicker-toggle matSuffix [for]="checkout"></mat-datepicker-toggle>
+                <mat-datepicker #checkout></mat-datepicker>
+            </mat-form-field>
+            <mat-slider color="accent" min="0" max="10" step="1" value="1" thumbLabel tickInterval="1" style="width: 80%;"></mat-slider><span class="calendar_text">ADULTS</span>
+            <mat-slider color="accent" min="0" max="10" step="1" value="1" thumbLabel tickInterval="1" style="width: 73%;"></mat-slider><span class="calendar_text">CHILDREN</span>
+            <button mat-raised-button class="book">BOOK</button>
+        </mat-card>
+    </div>
+</div>
+

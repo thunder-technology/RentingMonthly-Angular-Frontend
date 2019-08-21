@@ -1,0 +1,146 @@
+@import url('../app.component.scss');
+@import url('../product/product.component.scss');
+
+$gradient_color:linear-gradient(to right, #22A3DD, #9CC846);
+
+.gradient_color {
+  background: $gradient_color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.homepage_title {
+    @extend .gradient_color;
+    font-family: Futura, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    font-size: 3em;
+    line-height: 1.2em;
+    margin: 2em;
+}
+
+.homepage_title_layout{
+  z-index: 1;
+  position: absolute;
+  background: white;
+  margin-top: 8em;
+}
+
+.find_home{
+  animation: example 4s infinite linear;
+  -moz-animation: example 4s infinite linear;
+  -o-animation: example 4s infinite linear;
+  -webkit-animation: example 4s infinite linear;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 2.8em;
+  line-height: 1.3em;
+  margin-top: 4em;
+  letter-spacing: 0.1em;
+}
+
+
+.arrow {
+  margin: 1em 1em 1em 5em;
+  animation: example 4s infinite linear;
+  -moz-animation: example 4s infinite linear;
+  -o-animation: example 4s infinite linear;
+  -webkit-animation: example 4s infinite linear;
+}
+
+.arrow:hover {
+  -moz-animation: bounce 0.5s infinite linear, example 4s infinite linear;
+  -o-animation: bounce 0.5s infinite linear, example 4s infinite linear;
+  -webkit-animation: bounce 0.5s infinite linear, example 4s infinite linear;
+  animation: bounce 0.5s infinite linear, example 4s infinite linear;
+}
+
+.home_header {
+  z-index: -1;
+  height: 82vh;
+}
+
+@keyframes example {
+  from {color: #22A3DD;}
+  50% {color: #9CC846;}
+  to {color: #22A3DD;}
+}
+
+@-webkit-keyframes example {
+  from {color: #22A3DD;}
+  50% {color: #9CC846;}
+  to {color: #22A3DD;}
+}
+
+@-moz-keyframes example {
+  from {color: #22A3DD;}
+  50% {color: #9CC846;}
+  to {color: #22A3DD;}
+}
+
+@-ms-keyframes example {
+  from {color: #22A3DD;}
+  50% {color: #9CC846;}
+  to {color: #22A3DD;}
+}
+
+@-o-keyframes example {
+  from {color: #22A3DD;}
+  50% {color: #9CC846;}
+  to {color: #22A3DD;}
+}
+
+@-webkit-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-moz-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-o-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-ms-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+
+.book {
+  background: $gradient_color;
+  width: 100%;
+  font-family: Montserrat,Semibold,sans-serif;
+  color: white;
+  letter-spacing: 0.2em;
+  height: 4em;
+}
+
+.search{
+  @extend .book;
+}
+
+.icon_text_title {
+  color: whitesmoke;
+  font-size: 1em;
+  padding-top: 2em;
+}
+
+.icon_text {
+  color: #7A838C;
+  font-size: 0.7em;
+}

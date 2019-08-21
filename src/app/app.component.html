@@ -1,39 +1,71 @@
-<mat-toolbar style="background: transparent" class="fill-space">
-    <div fxFlex="row">
-        <div [fxFlex]="50">
-            <mat-card-title>
-                <img src="../assets/img/rm-logo-1.png" alt="rm-logo-1" class="title_icon"/><span class="p1"> ENTING MONTHLY</span>
-            </mat-card-title>
-        </div>
-        <div [fxFlex]="50">
-            <mat-card-actions>
-                <div fxHide.lt-lg="true">
-                    <button mat-flat-button (click)="onClickProduct()"><span class="p3">PRODUCT</span></button>
-                    <button mat-flat-button (click)="onClickOurService()"><span class="p3">OUR SERVICES</span></button>
-                    <button mat-flat-button (click)="onClickRenting()"><span class="p3">RENTING</span></button>
-                    <button mat-flat-button (click)="onClickAboutUs()"><span class="p3">ABOUT US</span></button>
-                    <button mat-flat-button (click)="onClickContactUs()"><span class="p3">CONTACT US</span></button>
-                    <button mat-flat-button (click)="onClickLogin()">
-                        <span class="p4">LOG IN</span>
+<div style="position: sticky;top: 0; z-index: 2">
+    <mat-toolbar style="background: white">
+        <div fxFlex="row">
+            <div [fxFlex]="40">
+                <div fxFlexAlign="center">
+                    <button class="title_button" mat-icon-button  (click)="routes.navigate(['homepage'])">
+                        <img src="../assets/img/rm-logo-1.png" alt="rm-logo-1" class="title_icon"/><span class="title"> ENTING MONTHLY</span>
                     </button>
                 </div>
-                <div fxHide.gt-md="true">
-                    <button mat-flat-button [matMenuTriggerFor]="menu">
-                        <mat-icon>menu</mat-icon>
-                    </button>
-                    <mat-menu #menu>
-                        <button mat-menu-item (click)="onClickProduct()"><span class="p3">PRODUCT</span></button>
-                        <button mat-menu-item (click)="onClickOurService()"><span class="p3">OUR SERVICES</span></button>
-                        <button mat-menu-item (click)="onClickRenting()"><span class="p3">RENTING</span></button>
-                        <button mat-menu-item (click)="onClickAboutUs()"><span class="p3">ABOUT US</span></button>
-                        <button mat-menu-item (click)="onClickContactUs()"><span class="p3">CONTACT US</span></button>
-                        <button mat-menu-item (click)="onClickLogin()">
-                            <span class="p4">LOG IN</span>
+            </div>
+            <div [fxFlex]="60" fxFlexAlign="start">
+                <mat-card-actions>
+                    <div fxHide.lt-md="true">
+                        <button class="navbar_button" *ngFor="let item of valArr" mat-flat-button (click)="onClickSwitch(item)"><span class="navbar">{{item}}</span></button>
+                        <button class="navbar_button" mat-flat-button (click)="onClickSwitch('login')">
+                            <span class="login">LOG IN</span>
                         </button>
-                    </mat-menu>
-                </div>
-            </mat-card-actions>
+                        <button mat-flat-button class="login_decoration">
+                            <img style="margin-top: 5em" src="../assets/img/rm-logo-1.png" alt="rm-logo-1" class="title_icon"/>
+                        </button>
+                    </div>
+                    <div fxHide.gt-sm="true" fxLayoutAlign="end">
+                        <button mat-flat-button [matMenuTriggerFor]="menu">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <mat-menu #menu>
+                            <div *ngFor="let item of valArr" >
+                                <button mat-menu-item (click)="onClickSwitch(item)"><span>{{item}}</span></button>
+                            </div>
+                            <button mat-menu-item (click)="this.routes.navigate(['login']);">
+                                <span>LOG IN</span>
+                            </button>
+                        </mat-menu>
+                    </div>
+                </mat-card-actions>
+            </div>
+        </div>
+    </mat-toolbar>
+</div>
+<router-outlet></router-outlet>
+<div class="footer">
+    <div fxFlex="row wrap">
+        <div fxLayoutAlign="center" style="padding: 6em;">
+            <img style="width: 5em; height: 4em" src="../assets/img/rm-logo-1.png" alt="rm-logo-1" />
+        </div>
+        <div fxLayoutAlign="center" fxLayoutGap="5em">
+            <p class="footer_text">FACEBOOK</p>
+            <p class="footer_text">TWITTER</p>
+            <p class="footer_text">GOOGLE+</p>
+            <p class="footer_text">BEHANCE</p>
+            <p class="footer_text">DRIBBLE</p>
+            <p class="footer_text">INSTAGRAM</p>
         </div>
     </div>
-</mat-toolbar>
-<router-outlet></router-outlet>
+    <div fxFlex="column" fxLayoutAlign="center">
+        <div><p class="footer_text_2">XXX Road Unit X, ON - CA</p></div>
+    </div>
+    <div fxFlex="column" fxLayoutAlign="center">
+        <p class="footer_text_2">+1 (XXX) XXX XXX</p>
+    </div>
+    <div fxFlex="column" fxLayoutAlign="center">
+        <p class="footer_text_2">info@mail.com</p>
+    </div>
+    <div fxFlex="row wrap" fxLayoutAlign="center">
+        <button mat-flat-button style="background: transparent" onClick="window.scroll(0, 0, 'smooth')">
+            <a>
+                <fa-icon [icon]="navToTop" [size]="'2x'" style="color: white" [transform]="'shrink-4'">navToTop</fa-icon>
+            </a>
+        </button>
+    </div>
+</div>

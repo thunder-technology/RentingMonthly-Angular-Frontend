@@ -1,0 +1,68 @@
+<div fxLayout="column">
+    <div fxLayout="row" fxFlexAlign="end">
+        <div class="home_header">
+            <img src="../../assets/img/home-header.jpg"/>
+        </div>
+    </div>
+    <div fxFlex="1 1 auto" class="homepage_title_layout">
+        <p class="homepage_title">RENTING <br/>MONTHLY <br/>TORONTO</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start">
+        <button mat-icon-button ngStyle.gt-xs="color: transparent; width: 4em; margin-top: 2em" class="arrow" (click)="scrollDown()">
+            <fa-icon [icon]="faArrowDown" [size]="'3x'" ></fa-icon>
+        </button>
+    </div>
+    <!------------------------------------------      SEARCH       ---------------------------------------------------->
+    <div style="background-color: #373A39;width: 100%" fxLayoutAlign="end">
+        <div style="margin: 10em" fxFlex.gt-lg="60" fxLayoutAlign="center">
+            <mat-card style="background-color: dimgrey">
+                <mat-card-content>
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <mat-form-field style="width: 100%" color="primary">
+                            <input matInput placeholder="WHERE">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="2em" fxLayoutAlign="center">
+                        <mat-form-field style="width: 50%" color="primary">
+                                <input matInput [matDatepickerFilter]="filter" [matDatepicker]=checkin placeholder=CHECKIN>
+                                <mat-datepicker-toggle matSuffix [for]=checkin></mat-datepicker-toggle>
+                                <mat-datepicker #checkin></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field style="width: 50%" color="primary">
+                            <input matInput [matDatepickerFilter]="filter" [matDatepicker]=checkout placeholder=CHECKOUT>
+                            <mat-datepicker-toggle matSuffix [for]=checkout></mat-datepicker-toggle>
+                            <mat-datepicker #checkout></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <span class="calendar_text">ADULTS: {{adults.value}}</span>
+                    <mat-slider #adults color="primary" min="0" max="10" step="1" value="1" thumbLabel tickInterval="1" style="width: 100%"></mat-slider>
+                    <span class="calendar_text">CHILDREN: {{children.value}}</span>
+                    <mat-slider #children color="primary" min="0" max="10" step="1" value="1" thumbLabel tickInterval="1" style="width: 100%;"></mat-slider>
+                    <button mat-raised-button class="search">SEARCH</button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div fxFlex="40" fxLayoutAlign="center" style="height: 40em;" >
+            <div class="find_home" fxHide.lt-md="true">
+                <p>Find <br/>Homes <br/>on <br/> Renting <br/> Monthly</p>
+            </div>
+        </div>
+    </div>
+    <div fxFlex="1 1 auto" style="height: 20em; background-color: #373A39;">
+        <div fxLayout.gt-xs="row" fxLayoutAlign="center">
+            <div fxFlex="20" fxLayoutAlign="center" *ngFor="let icon of iconList">
+                <fa-icon [icon]="icon.icon" size="4x" style="color: #9CC846"></fa-icon>
+            </div>
+        </div>
+        <div fxLayout.gt-xs="row" fxLayoutAlign="center">
+            <div fxFlex="20" fxLayoutAlign="center" *ngFor="let icon of iconList">
+                <p class="icon_text_title">{{icon.title}}</p>
+            </div>
+        </div>
+        <div fxLayout.gt-xs="row" fxLayoutAlign="center">
+            <div fxFlex="20" fxLayoutAlign="center" *ngFor="let icon of iconList">
+                <p class="icon_text">{{icon.text}}</p>
+            </div>
+        </div>
+    </div>
+</div>

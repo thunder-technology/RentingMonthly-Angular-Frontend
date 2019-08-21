@@ -10,15 +10,16 @@ $c8: #9B9B9B;
 
 h1 {
   font-family: Montserrat, Semibold, sans-serif;
-  size: 54px;
+  size: 3em;
   letter-spacing: 15px;
   line-height: 16px;
 }
 
 h2 {
-  font-family: Montserrat, Semibold, sans-serif;
-  size: 35px;
-  letter-spacing: 7px;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  size: 2em;
+  letter-spacing: 0.05em;
 }
 
 h3 {
@@ -49,32 +50,31 @@ h6 {
   letter-spacing: 2px;
 }
 
-.p1 {
+.title {
   font-family: Montserrat, sans-serif;
   font-weight: normal;
   letter-spacing: 0.2em;
-  font-size: 0.6em;
-}
-
-.p2 {
-  font-family: Montserrat, sans-serif;
-  font-weight: lighter;
-  size: 18px;
-}
-
-.p3 {
-  font-family: Montserrat, sans-serif;
-  font-weight: lighter;
   font-size: 0.8em;
-  letter-spacing: 0.2em;
-  line-height: 30px;
-  padding-inline-end: 1em;
 }
 
-.p4 {
+.navbar {
+  font-family: Montserrat, sans-serif;
+  font-weight: lighter;
+  letter-spacing: 0.1em;
+  font-size: 0.4em;
+}
+
+.city {
   font-family: Montserrat, sans-serif;
   font-weight: normal;
-  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  font-size: 1em;
+}
+
+.login {
+  font-family: Montserrat, sans-serif;
+  font-weight: lighter;
+  font-size: 1em;
   letter-spacing: 0.2em;
   background: $c4;
   -webkit-background-clip: text;
@@ -82,12 +82,107 @@ h6 {
 }
 
 .title_icon {
-  height: 1em;
-  width: 1em;
+  height: 2em;
+  width: 2em;
 }
 
-.fill-space {
-  // This fills the remaining space, by using flexbox.
-  // Every toolbar row uses a flexbox row layout.
-  flex: 1 1 auto;
+.navbar {
+  font-family: Montserrat, sans-serif;
+  font-weight: lighter;
+  letter-spacing: 0.1em;
+  font-size: 1em;
+  text-align: center;
+}
+
+.price {
+  font-stretch: expanded;
+  font-family: Montserrat, Semibold, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  font-size: 2em;
+}
+
+.calendar_text {
+  font-family: Montserrat, sans-serif;
+  font-weight: lighter;
+  letter-spacing: 0.1em;
+  font-size: 1em;
+}
+
+.sub_title {
+  font-family: Montserrat, sans-serif;
+  font-weight: bolder;
+  font-size: 1.5em;
+  align-content: center ;
+  line-height: 1em;
+  letter-spacing: 0.1em;
+}
+
+.review_title {
+  font-family: Montserrat, Semibold, sans-serif;
+  font-size: 0.9em;
+  line-height: 2em;
+  letter-spacing: 0.05em;
+}
+
+.text {
+  font-family: Montserrat, Semibold, sans-serif;
+  font-size: 0.7em;
+  line-height: 2em;
+  letter-spacing: 0.05em;
+}
+
+.icon_text {
+  font-family: Montserrat, sans-serif;
+  font-weight: lighter;
+  font-size: 1em;
+  line-height: 2em;
+  letter-spacing: 0.05em;
+  margin: 1em;
+}
+
+*:focus {
+  outline:none;
+}
+
+.footer {
+  display: flex;
+  min-height: 50vh;
+  flex-direction: column;
+  background-color: #373A39;
+}
+
+.title_button {
+  width: 15em;
+  height: 4.5em;
+}
+
+.footer_text {
+  color: white;
+  font-family: Montserrat, sans-serif;
+  font-weight: lighter;
+  font-size: 0.7em;
+  line-height: 2em;
+  letter-spacing: 0.2em;
+}
+
+.footer_text_2 {
+  color: lightgray;
+  font-family: Montserrat, sans-serif;
+  font-weight: lighter;
+  font-size: 0.7em;
+  letter-spacing: 0.2em;
+}
+
+.login_decoration {
+  background: $c2;
+  height: 8em;
+  width: 5em;
+  z-index: 1;
+  position: absolute;
+  transition: 0.3s;
+}
+
+.login_decoration:hover {
+  background: $c4;
 }
